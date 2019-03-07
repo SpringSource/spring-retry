@@ -125,4 +125,9 @@ public @interface Retryable {
 	 */
 	String[] listeners() default {};
 
+	/**
+	 * Flag to say if {@link org.springframework.retry.ExhaustedRetryException} will be thrown if
+	 * the corresponding {@link Recover} method is not found
+	 */
+	boolean exposeOriginalException() default false;
 }
